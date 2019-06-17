@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="itemMovie"
+                type="kedar.com.movies.viewmodels.ItemMovieViewModel"/>
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/select_mood_layout"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            android:layout_marginLeft="@dimen/spacing_middle"
+            android:layout_marginRight="@dimen/spacing_middle"
+            android:visibility="visible"
+            app:cardCornerRadius="@dimen/dialog_rounded_corner"
+
+            app:cardElevation="@dimen/dialog_rounded_corner">
+
+        <LinearLayout android:orientation="horizontal"
+                      android:layout_margin="10dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+            <ImageView
+                    android:id="@+id/poster"
+                    tools:text="Title Movie"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:loadImage="@{itemMovie.poster}"
+                    android:src="@color/colorAccent"/>
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/title"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{itemMovie.title}"
+                        tools:text="Title Movie"/>
+
+                <TextView
+                        android:id="@+id/date"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{itemMovie.date}"
+                        tools:text="Title Movie"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
